@@ -1,0 +1,154 @@
+/* Container for the entire Navbar */
+.navContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    z-index: 100;
+  }
+  
+  /* Independent Logo */
+  .logo {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 101;
+  }
+  
+  /* Circular Menu Button containing 4 dots arranged in a diamond */
+  .menuButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 1rem;
+    right: 1.5rem; /* Increased gap from the button */
+    z-index: 102;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .menuButton.active {
+    transform: rotate(180deg); /* 180-degree rotation when active */
+  }
+  
+  .menuButton .dot {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+  
+  .menuButton .dot1 { top: 0; left: 50%; transform: translateX(-50%); }
+  .menuButton .dot2 { right: 0; top: 50%; transform: translateY(-50%); }
+  .menuButton .dot3 { bottom: 0; left: 50%; transform: translateX(-50%); }
+  .menuButton .dot4 { left: 0; top: 50%; transform: translateY(-50%); }
+  
+  .menuButton.active .dot1 {
+    transform: translateX(-50%) translateY(-50%) rotate(90deg);
+  }
+  
+  .menuButton.active .dot2 {
+    transform: translateY(-50%) translateX(-50%) rotate(90deg);
+  }
+  
+  .menuButton.active .dot3 {
+    transform: translateX(-50%) translateY(50%) rotate(90deg);
+  }
+  
+  .menuButton.active .dot4 {
+    transform: translateY(-50%) translateX(50%) rotate(90deg);
+  }
+  
+  /* Navbar items container */
+  .navbar {
+    position: fixed;
+    top: 1rem;
+    right: 4rem; /* Increased gap to give space between button and navbar */
+    display: flex;
+    gap: 1.5rem; /* Increased gap between navbar items */
+    flex-direction: row;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    z-index: 101;
+    opacity: 0;
+    transform: translateX(100%); /* Initially off-screen to the right */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smooth sliding from right */
+  }
+  
+  .navbar.active {
+    opacity: 1;
+    transform: translateX(0); /* Slide to visible position */
+  }
+  
+  .navLink {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden; /* Ensure underline doesn't overflow */
+  }
+  
+  .navLink::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #ff6b6b;
+    transition: all 0.3s ease;
+    transform: translateX(-50%); /* Start from center */
+    transform-origin: center;
+  }
+  
+  .navLink:hover::before {
+    width: 100%; /* Expand to full width */
+    left: 0; /* Align to left edge */
+    transform: translateX(0); /* Center to left */
+  }
+  
+  .navLink:hover {
+    color: #ff6b6b;
+  }
+  
+  /* Fade-in animation for menu */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(10%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .navbar {
+      top: 50px;
+      right: 1rem;
+      flex-direction: column;
+    }
+  
+    .menuButton {
+      right: 1rem;
+      top: 1rem;
+    }
+  }
+  
