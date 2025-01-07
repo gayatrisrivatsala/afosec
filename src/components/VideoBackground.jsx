@@ -6,6 +6,7 @@ const VideoBackground = () => {
         muted
         playsInline
         className="videoBackground"
+        
       >
         <source src="/afosec_ad.mp4" type="video/mp4" />
       </video>
