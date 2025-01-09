@@ -1,0 +1,358 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/components/Navbar.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+/* Container for the entire Navbar */
+.Navbar_navContainer__tpkRW {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  z-index: 100;
+}
+
+/* Independent Logo */
+.Navbar_logo__UM0Ax {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 101;
+}
+
+/* Circular Menu Button containing 4 dots arranged in a diamond shape */
+.Navbar_menuButton__6Djq2 {
+  background: rgba(165, 164, 164, 0.8); /* Match navbar background */
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 1rem;
+  right: 1.5rem;
+  z-index: 102;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(36, 36, 36, 0.5); /* Optional shadow */
+  transition: transform 0.5s ease-in-out, background 0.3s ease-in-out;
+}
+
+.Navbar_menuButton__6Djq2:hover {
+  background: rgba(0, 0, 0, 0.9); /* Slightly darker on hover */
+}
+
+.Navbar_menuButton__6Djq2.Navbar_active__ZTgb8 {
+  transform: rotate(180deg); /* Rotate the button 180 degrees */
+  background: rgb(56, 56, 56); /* Match active navbar */
+}
+
+/* Dots inside the button */
+/* Dots inside the button */
+.Navbar_menuButton__6Djq2 .Navbar_dot__Vi0j_ {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+/* Dot positions for a perfect diamond shape */
+.Navbar_menuButton__6Djq2 .Navbar_dot1__FGPaL {
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Navbar_menuButton__6Djq2 .Navbar_dot2__Dz1Gh {
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+.Navbar_menuButton__6Djq2 .Navbar_dot3___iRGz {
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Navbar_menuButton__6Djq2 .Navbar_dot4__iJkJW {
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+/* Maintain dot positions after rotation */
+.Navbar_menuButton__6Djq2.Navbar_active__ZTgb8 .Navbar_dot1__FGPaL,
+.Navbar_menuButton__6Djq2.Navbar_active__ZTgb8 .Navbar_dot2__Dz1Gh,
+.Navbar_menuButton__6Djq2.Navbar_active__ZTgb8 .Navbar_dot3___iRGz,
+.Navbar_menuButton__6Djq2.Navbar_active__ZTgb8 .Navbar_dot4__iJkJW {
+  transform: translate(-50%, -50%);
+}
+
+/* Navbar items container */
+.Navbar_navbar__fk_p7 {
+  position: fixed;
+  top: 1rem;
+  right: 4rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: row;
+  background: rgba(252, 249, 249, 0.8); /* Match menu button background */
+  padding: 0.5rem 2rem; /* Extra padding for capsule effect */
+  border-radius: 25px; /* Capsule shape */
+  z-index: 101;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.Navbar_navbar__fk_p7.Navbar_active__ZTgb8 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.Navbar_navLink__id1IU {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.Navbar_navLink__id1IU::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #ff6b6b;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.Navbar_navLink__id1IU:hover::before {
+  width: 100%;
+  left: 0;
+  transform: translateX(0);
+}
+
+.Navbar_navLink__id1IU:hover {
+  color: #ff6b6b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .Navbar_navbar__fk_p7 {
+    top: 50px;
+    right: 1rem;
+    flex-direction: column;
+  }
+
+  .Navbar_menuButton__6Djq2 {
+    right: 1rem;
+    top: 1rem;
+  }
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/components/Logo.module.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+  font-family: 'Racheyla';
+  src: 
+       url('/fonts/Rachelya.ttf') format('truetype'); /* Additional fallback */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.Logo_logoContainer__e_vYb {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+  
+  .Logo_logoImage__daWgp {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .Logo_logoText___NRG4 {
+    color: rgb(107, 105, 105);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Racheyla';
+  }
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/app/page.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/components/Slider.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 0px;
+  background: #eee;
+  user-select: none;
+}
+
+[type="radio"] {
+  display: none;
+}
+
+#slider {
+  height: 35vw;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+#slider label {
+  margin: auto;
+  width: 60%; /* Adjust width as needed */
+  height: 30vw; /* Set height to 50% of width to maintain 2:1 aspect ratio */
+  border-radius: 48px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3; /* Default opacity for non-selected images */
+  filter: blur(1px); /* Default blur for non-selected images */
+}
+
+#s1:checked ~ #slide4,
+#s2:checked ~ #slide5,
+#s3:checked ~ #slide1,
+#s4:checked ~ #slide2,
+#s5:checked ~ #slide3 {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  transform: translate3d(-30%, 0, -200px);
+  opacity: 0.3;
+  filter: blur(5px);
+}
+
+#s1:checked ~ #slide5,
+#s2:checked ~ #slide1,
+#s3:checked ~ #slide2,
+#s4:checked ~ #slide3,
+#s5:checked ~ #slide4 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  transform: translate3d(-15%, 0, -100px);
+  opacity: 0.5;
+  filter: blur(3px);
+}
+
+#s1:checked ~ #slide1,
+#s2:checked ~ #slide2,
+#s3:checked ~ #slide3,
+#s4:checked ~ #slide4,
+#s5:checked ~ #slide5 {
+  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19);
+  transform: translate3d(0, 0, 0);
+  opacity: 1; /* Fully visible for the selected image */
+  filter: blur(0); /* No blur for the selected image */
+}
+
+#s1:checked ~ #slide2,
+#s2:checked ~ #slide3,
+#s3:checked ~ #slide4,
+#s4:checked ~ #slide5,
+#s5:checked ~ #slide1 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  transform: translate3d(15%, 0, -100px);
+  opacity: 0.5;
+  filter: blur(3px);
+}
+
+#s1:checked ~ #slide3,
+#s2:checked ~ #slide4,
+#s3:checked ~ #slide5,
+#s4:checked ~ #slide1,
+#s5:checked ~ #slide2 {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  transform: translate3d(30%, 0, -200px);
+  opacity: 0.3;
+  filter: blur(5px);
+}
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/components/sponsors.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************/
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+  padding: 15px 0;
+  position: relative; /* Ensure the container clips the scrolling content */
+}
+
+.sponsors-list {
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* Prevent wrapping */
+  animation: marquee 20s linear infinite; /* Adjust animation duration based on content width */
+}
+
+.sponsor-pill {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 50px; /* Smoothly rounded corners */
+  padding: 10px 30px; /* Increased padding for a longer pill */
+  margin-right: 25px; /* Space between pills */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slightly larger shadow for depth */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+  min-width: 200px; /* Ensures pills have consistent length */
+}
+
+.sponsor-pill:hover {
+  transform: scale(1.05); /* Slightly enlarge the pill on hover */
+}
+
+.sponsor-logo {
+  width: 40px; /* Slightly larger logos */
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 20px; /* Increased space between logo and text */
+}
+
+.sponsor-name {
+  font-size: 16px; /* Slightly larger font size */
+  font-weight: bold;
+  color: #333;
+  flex: 1; /* Allows the name to occupy remaining space gracefully */
+  text-align: center; /* Center-aligns the text for elegance */
+}
+
+/* Keyframes for the marquee effect */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); /* Start position from the right */
+  }
+  100% {
+    transform: translateX(-200%); /* Move off-screen to the left */
+  }
+}
+

@@ -1,0 +1,233 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/globals.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+/* Tailwind Preflight with manual reset */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+#root, main {
+  width: 100%;
+  height: 100%;
+
+}
+
+::-webkit-scrollbar{
+  width:0px;
+}
+::-webkit-scrollbar-thumb{
+  background:rgba(136, 136, 136, 0.281) ;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/components/Navbar.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+/* Container for the entire Navbar */
+.Navbar_navContainer__tpkRW {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  z-index: 100;
+}
+
+/* Independent Logo */
+.Navbar_logo__UM0Ax {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 101;
+}
+
+/* Circular Menu Button containing 4 dots arranged in a diamond shape */
+.Navbar_menuButton__6Djq2 {
+  background: rgba(165, 164, 164, 0.8); /* Match navbar background */
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 1rem;
+  right: 1.5rem;
+  z-index: 102;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(36, 36, 36, 0.5); /* Optional shadow */
+  transition: transform 0.5s ease-in-out, background 0.3s ease-in-out;
+}
+
+.Navbar_menuButton__6Djq2:hover {
+  background: rgba(0, 0, 0, 0.9); /* Slightly darker on hover */
+}
+
+.Navbar_menuButton__6Djq2.Navbar_active__ZTgb8 {
+  transform: rotate(180deg); /* Rotate the button 180 degrees */
+  background: rgb(56, 56, 56); /* Match active navbar */
+}
+
+/* Dots inside the button */
+/* Dots inside the button */
+.Navbar_menuButton__6Djq2 .Navbar_dot__Vi0j_ {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+/* Dot positions for a perfect diamond shape */
+.Navbar_menuButton__6Djq2 .Navbar_dot1__FGPaL {
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Navbar_menuButton__6Djq2 .Navbar_dot2__Dz1Gh {
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+.Navbar_menuButton__6Djq2 .Navbar_dot3___iRGz {
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Navbar_menuButton__6Djq2 .Navbar_dot4__iJkJW {
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+/* Maintain dot positions after rotation */
+.Navbar_menuButton__6Djq2.Navbar_active__ZTgb8 .Navbar_dot1__FGPaL,
+.Navbar_menuButton__6Djq2.Navbar_active__ZTgb8 .Navbar_dot2__Dz1Gh,
+.Navbar_menuButton__6Djq2.Navbar_active__ZTgb8 .Navbar_dot3___iRGz,
+.Navbar_menuButton__6Djq2.Navbar_active__ZTgb8 .Navbar_dot4__iJkJW {
+  transform: translate(-50%, -50%);
+}
+
+/* Navbar items container */
+.Navbar_navbar__fk_p7 {
+  position: fixed;
+  top: 1rem;
+  right: 4rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: row;
+  background: rgba(252, 249, 249, 0.8); /* Match menu button background */
+  padding: 0.5rem 2rem; /* Extra padding for capsule effect */
+  border-radius: 25px; /* Capsule shape */
+  z-index: 101;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.Navbar_navbar__fk_p7.Navbar_active__ZTgb8 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.Navbar_navLink__id1IU {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.Navbar_navLink__id1IU::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #ff6b6b;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.Navbar_navLink__id1IU:hover::before {
+  width: 100%;
+  left: 0;
+  transform: translateX(0);
+}
+
+.Navbar_navLink__id1IU:hover {
+  color: #ff6b6b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .Navbar_navbar__fk_p7 {
+    top: 50px;
+    right: 1rem;
+    flex-direction: column;
+  }
+
+  .Navbar_menuButton__6Djq2 {
+    right: 1rem;
+    top: 1rem;
+  }
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/components/Logo.module.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+  font-family: 'Racheyla';
+  src: 
+       url('/fonts/Rachelya.ttf') format('truetype'); /* Additional fallback */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.Logo_logoContainer__e_vYb {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+  
+  .Logo_logoImage__daWgp {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .Logo_logoText___NRG4 {
+    color: rgb(107, 105, 105);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Racheyla';
+  }
