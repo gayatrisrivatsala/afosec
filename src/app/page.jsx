@@ -19,13 +19,14 @@ import Slider from "@/components/Slider";
 import Events from "@/components/Events";
 import Sponsors from "@/components/sponsors";
 import ContactSection from "@/components/contact-section";
+import DepartmentGrid from "@/components/departments"; // Make sure to import the DepartmentGrid
 
 export default function Home() {
   return (
     <ChakraProvider>
       <main
         className="bg-whitesmoke"
-        style={{ backgroundColor: "whitesmoke", width: "100%" }}
+        style={{ backgroundColor: "white", width: "100%" }}
       >
         <Stack direction="column" spacing={10} w="full">
           {/* Video Background */}
@@ -100,17 +101,23 @@ export default function Home() {
 
           {/* Tabs for Events */}
           <Box
-            mx="auto"
-            px={5}
-            py={4}
+            mx={{ base: "4", md: "auto" }} // Symmetric margin on mobile and auto-center on larger screens
+            my={{ base: 4, md: 6 }} // Vertical margin
             w="full"
-            maxWidth="1091px"
+            maxWidth={{ base: "95%", md: "70%" }} // 95% on mobile, 70% on larger screens
             display="flex"
             justifyContent="center"
             borderRadius="20px"
             border="5px solid"
+            overflow="hidden" // Ensure no content spills outside the box
           >
-            <Tabs position="relative" variant="unstyled" isFitted w="100%">
+            <Tabs
+              position="relative"
+              variant="unstyled"
+              isFitted
+              w="100%"
+              h="auto" // Dynamic height to accommodate content
+            >
               <TabList>
                 <Tab>Technical Events</Tab>
                 <Tab>Non-Technical Events</Tab>
@@ -150,10 +157,16 @@ export default function Home() {
               height="auto"
             />
           </Box>
-          <Box px={5}>
-            <Text textAlign="center">
-              Here the department explore page can be seen.
-            </Text>
+
+          {/* Department Grid Section */}
+          <Box
+            px={5}
+            mb={8}
+            flex="1 0 auto"
+            maxHeight={{ base: "auto", md: "auto" }} // Adjust max height for different screen sizes
+            overflowY="auto"
+          >
+            <DepartmentGrid />
           </Box>
 
           {/* Sponsors Section */}

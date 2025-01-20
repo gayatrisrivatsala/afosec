@@ -48,7 +48,6 @@
 }
 
 /* Dots inside the button */
-/* Dots inside the button */
 .menuButton .dot {
   width: 10px;
   height: 10px;
@@ -103,6 +102,8 @@
   opacity: 0;
   transform: translateX(100%);
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  justify-content: center; /* Center all items */
+  align-items: center; /* Vertically center items */
 }
 
 .navbar.active {
@@ -148,10 +149,16 @@
     top: 50px;
     right: 1rem;
     flex-direction: column;
+    justify-content: center; /* Ensure the items are centered on smaller screens */
   }
 
   .menuButton {
     right: 1rem;
     top: 1rem;
+  }
+
+  .navLink {
+    padding: 10px;
+    font-size: 18px;
   }
 }

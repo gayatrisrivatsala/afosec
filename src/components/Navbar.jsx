@@ -2,19 +2,25 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import styles from "./Navbar.module.css";
 import Logo from "./Logo";
 
 const navItems = [
-  { title: "Central Events", href: "#central-events" },
-  { title: "Department Events", href: "#department-events" },
-  { title: "Sponsors", href: "#sponsors" },
-  { title: "Contact Us", href: "#contact" },
-  { title: "Register", href: "/register" },
+  { title: "Central Events", hash: "#central-events" },
+  { title: "Department Events", hash: "#department-events" },
+  { title: "Sponsors", hash: "#sponsors" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+
+  const handleNavigation = (hash) => {
+    // Redirect to the home page with the hash
+    router.push(`/${hash}`);
+    setIsOpen(false); // Close the menu after navigation
+  };
 
   return (
     <div className={styles.navContainer}>
@@ -31,10 +37,29 @@ const Navbar = () => {
       </button>
       <div className={`${styles.navbar} ${isOpen ? styles.active : ""}`}>
         {navItems.map((item) => (
-          <Link key={item.title} href={item.href} className={styles.navLink}>
+          <button
+            key={item.title}
+            className={styles.navLink}
+            onClick={() => handleNavigation(item.hash)}
+          >
             {item.title}
-          </Link>
+          </button>
         ))}
+
+        <Link
+          href="/contact-us"
+          className={`${styles.navLink} ${styles.centered}`} // Add centered class
+          onClick={() => setIsOpen(false)}
+        >
+          Contact-us
+        </Link>
+        <Link
+          href="/register"
+          className={`${styles.navLink} ${styles.centered}`} // Add centered class
+          onClick={() => setIsOpen(false)}
+        >
+          Register
+        </Link>
       </div>
     </div>
   );

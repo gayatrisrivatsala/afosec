@@ -20,18 +20,22 @@ export default function ContactSection() {
 
   return (
     <Box as="section" w="full" bg="white" borderTopWidth="1px" minH="100vh">
-      <Box maxW="container.lg" mx="auto" px={0} py={0}>
+      <Box
+        maxW="container.lg"
+        mx="auto"
+        px={{ base: 4, lg: 8 }}
+        py={{ base: 6, lg: 12 }}
+      >
         <Flex
           direction={{ base: "column", lg: "row" }}
-          gap="0"
-          w="100%"
-          h="100%"
+          gap={{ base: 8, lg: 0 }}
+          alignItems={{ base: "center", lg: "flex-start" }}
         >
           {/* Get In Touch Column */}
-          <Box flex="1" spacing="8" minH="100vh" w="50%">
+          <Box flex="1" w="full" textAlign={{ base: "center", lg: "left" }}>
             <Heading
               as="h2"
-              fontSize="3xl"
+              fontSize={{ base: "2xl", lg: "3xl" }}
               fontWeight="bold"
               borderBottomWidth="2px"
               borderBottomColor={borderColor}
@@ -42,7 +46,7 @@ export default function ContactSection() {
             </Heading>
 
             {/* AFOSEC Logo */}
-            <Box w="64">
+            <Box mt="4" w="64" mx={{ base: "auto", lg: "0" }}>
               <Image
                 src="/afosec-logo.png"
                 alt="AFOSEC"
@@ -53,7 +57,12 @@ export default function ContactSection() {
             </Box>
 
             {/* Social Media Links */}
-            <Flex gap="8" alignItems="center" mt="4">
+            <Flex
+              gap="6"
+              justifyContent={{ base: "center", lg: "flex-start" }}
+              alignItems="center"
+              mt="6"
+            >
               <ChakraLink
                 href="https://instagram.com/afosec"
                 isExternal
@@ -142,10 +151,10 @@ export default function ContactSection() {
           </Box>
 
           {/* Locate Us Column */}
-          <Box flex="1" minH="100vh" w="50%">
+          <Box flex="1" w="full" textAlign={{ base: "center", lg: "left" }}>
             <Heading
               as="h2"
-              fontSize="3xl"
+              fontSize={{ base: "2xl", lg: "3xl" }}
               fontWeight="bold"
               borderBottomWidth="2px"
               borderBottomColor={borderColor}
@@ -173,7 +182,7 @@ export default function ContactSection() {
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1477.6294860031514!2d80.69012039591398!3d16.48256458853254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35fb11a7825b09%3A0x9991a13a52e668e9!2sVRSEC%20Entrance%20Rd%2C%20TCR%20Colony%2C%20Chalasani%20Nagar%2C%20Kanuru%2C%20Vijayawada%2C%20Andhra%20Pradesh%20520007!5e0!3m2!1sen!2sin!4v1736397978111!5m2!1sen!2sin"
                 width="100%"
-                height="450"
+                height="300"
                 style={{ border: 0 }}
                 loading="lazy"
                 allowFullScreen
