@@ -54,7 +54,7 @@ const Navbar = () => {
           Contact-us
         </Link>
         <Link
-          href="/register"
+          href="https://forms.gle/wfQmj8gCGnR2P9Ps5"
           className={`${styles.navLink} ${styles.centered}`} // Add centered class
           onClick={() => setIsOpen(false)}
         >
